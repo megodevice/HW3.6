@@ -1,7 +1,6 @@
 package com.geeks.hw36
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView.Adapter
@@ -32,11 +31,7 @@ class CountryAdapter(private val countryList: ArrayList<String>) :
     }
 }
 
-class CountryItemViewHolder(itemView: View) : ViewHolder(itemView) {
-    private lateinit var binding: ItemCountryBinding
-    constructor(binding: ItemCountryBinding) : this(binding.root) {
-        this.binding = binding
-    }
+class CountryItemViewHolder(private val binding: ItemCountryBinding) : ViewHolder(binding.root) {
 
     fun onBind(countryName: String) {
         binding.tvCountryName.text = countryName

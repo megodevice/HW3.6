@@ -1,7 +1,6 @@
 package com.geeks.hw36
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
@@ -36,12 +35,7 @@ class ContinentAdapter(
     }
 }
 
-class ContinentItemViewHolder(itemView: View) : ViewHolder(itemView) {
-    private lateinit var binding: ItemContinentBinding
-
-    constructor(binding: ItemContinentBinding) : this(binding.root) {
-        this.binding = binding
-    }
+class ContinentItemViewHolder(private val binding: ItemContinentBinding) : ViewHolder(binding.root) {
 
     fun onBind(continent: Continent) {
         binding.tvContinentName.text = continent.continentName
